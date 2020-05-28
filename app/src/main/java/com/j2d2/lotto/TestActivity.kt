@@ -1,9 +1,10 @@
 package com.j2d2.lotto
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import android.net.*
 import kotlinx.android.synthetic.main.activity_test.*
 
 class TestActivity : AppCompatActivity() {
@@ -28,5 +29,11 @@ class TestActivity : AppCompatActivity() {
             val intent = Intent(this@TestActivity, ResultActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    fun callWeb(view: View) {
+        val uri = (Uri.parse("http://www.naver.com"))
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        startActivity(intent)
     }
 }
